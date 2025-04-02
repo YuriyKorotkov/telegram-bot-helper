@@ -6,3 +6,23 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Исключаем виртуальное окружение
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Логи и временные файлы
+logs/
+*.log
+*.tmp
+
+# Конфиденциальные данные
+.env
+config.json
+
+# IDE и системные файлы
+.vscode/
+.idea/
+.DS_Store
+
