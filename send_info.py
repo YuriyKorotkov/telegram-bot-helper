@@ -2,11 +2,12 @@ import asyncio
 from aiogram import Bot
 from aiogram.types import InputFile
 from database import get_all_users  # Импортируем функцию получения всех пользователей
-from config import TOKEN  # Токен для подключения к боту
-
+from config import BOT_TOKEN  # Токен для подключения к боту
+from config import bot
 import os
-
-bot = Bot(token=TOKEN)
+from config import bot
+from database import get_all_users
+bot = Bot(token=BOT_TOKEN)
 image_path = "images/Group 1.jpg"
 
 async def send_image_to_all_users(image_path: str, caption: str):
