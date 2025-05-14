@@ -26,7 +26,7 @@ file_attachments = {
 }
 
 # 📌 Декоратор для обработки ошибок
-def catch_exceptions(default_message="⚠️ Произошла ошибка, попробуйте позже."):
+def catch_exceptions(default_message="⚠️ Произошла ошибка,Пожалуйста перезапустите бота, очистите историю переписки с ботом и нажмите /start заново, чтобы всё заработало корректно."):
     def decorator(func):
         @wraps(func)
         async def wrapper(*args, **kwargs):
@@ -46,7 +46,7 @@ def check_file_exists(file_key):
         async def wrapper(call: CallbackQuery, *args, **kwargs):
             file_path = file_attachments.get(file_key)
             if not file_path:
-                await call.message.answer("⚠️ Файл не найден. Обратитесь к администратору.")
+                await call.message.answer("⚠️ Файл не найден.Пожалуйста перезапустите бота, очистите историю переписки с ботом и нажмите /start заново, чтобы всё заработало корректно.")
                 return
             return await func(call, file_path, *args, **kwargs)
         return wrapper
