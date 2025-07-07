@@ -60,6 +60,7 @@ async def return_to_main_menu(call: CallbackQuery, state: FSMContext, menu_key: 
             [InlineKeyboardButton(text="🏢 Заполнение карточки объекта", callback_data="submenu:fill_object_card")],
             [InlineKeyboardButton(text="📅 Календарно-сетевой график", callback_data="submenu:keg")],
             [InlineKeyboardButton(text="🖼️ Добавление фото", callback_data="submenu:add_photo_docs")],
+            [InlineKeyboardButton(text="📑 Добавление контрактов на ПИР и СМР", callback_data="submenu:add_contr_1")],
             [InlineKeyboardButton(text="📝 Добавление документации", callback_data="submenu:add_docs")],
             [InlineKeyboardButton(text="📊 Заполнение данных для отчета ТИМ", callback_data="submenu:fill_tim_report")],
             [InlineKeyboardButton(text="📞 Обращение в техподдержку", callback_data="submenu:tech_support")],
