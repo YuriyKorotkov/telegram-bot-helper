@@ -292,6 +292,30 @@ async def send_add_object_file(call: CallbackQuery):
     )
 
 
+@show_progress(total_steps=5, step_delay=0.05)
+@catch_exceptions()
+@check_file_exists('add_contr_file')
+async def add_contr(call: CallbackQuery, file_path: str):
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[[InlineKeyboardButton(text="🔙 Назад", callback_data="menu:back")]]
+    )
+
+    doc = FSInputFile(file_path)
+
+    await call.message.delete()  # Удаление сообщения
+
+    await bot.send_document(
+        chat_id=call.message.chat.id,
+        document=doc,
+        caption="⬆️ Нажмите, чтобы скачать и изучить методические материалы📄",
+        reply_markup=keyboard
+    )
+
+
+
+
+
+
 async def send_add_user_file(call: CallbackQuery):
     file_path = file_attachments['add_user']
     doc = FSInputFile(file_path)

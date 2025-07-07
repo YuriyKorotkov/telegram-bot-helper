@@ -11,6 +11,7 @@ from aiogram.types import (
 from handlers import (
     add_tim_1,
     add_tim_2,
+    add_contr,
     add_vis_11,
     add_vis_22,
     send_add_object_file,
@@ -137,6 +138,7 @@ async def menu_handler(call: CallbackQuery, state: FSMContext):
                 [InlineKeyboardButton(text="🏢 Заполнение карточки объекта", callback_data="submenu:fill_object_card")],
                 [InlineKeyboardButton(text="📅 Календарно-сетевой график", callback_data="submenu:keg")],
                 [InlineKeyboardButton(text="🖼️ Добавление фото", callback_data="submenu:add_photo_docs")],
+                [InlineKeyboardButton(text="📑 Добавление контрактов на ПИР и СМР", callback_data="submenu:add_contr_1")],
                 [InlineKeyboardButton(text="📝 Добавление документации", callback_data="submenu:add_docs")],
                 [InlineKeyboardButton(text="📊 Заполнение данных для отчета ТИМ", callback_data="submenu:fill_tim_report")],
                 [InlineKeyboardButton(text="📞 Обращение в техподдержку", callback_data="submenu:tech_support")],
@@ -245,6 +247,9 @@ async def menu_handler(call: CallbackQuery, state: FSMContext):
 
         elif call.data == "submenu:add_docs":
             await add_dock_1(call)
+
+        elif call.data == "submenu:add_contr_1":
+            await add_contr(call)
 
         elif call.data == "submenu:fill_object_card":
             await object_card(call)
